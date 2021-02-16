@@ -1,7 +1,12 @@
 from vidstream import StreamingServer
 import threading
 
-receiver = StreamingServer('192.168.1.11',9999)
+
+#enter your local wifi public ip and port
+host = "127.0.0.1"
+port = 55555
+
+receiver = StreamingServer(host,port)
 
 receiver_threading = threading.Thread(target=receiver.start_server)
 receiver_threading.start()
